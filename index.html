@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReActGen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <link rel="icon" href="./images/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="./animation-slider/css/index.css">
+    <script src="./animation-slider/scripts/index.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="project-title">ReActGen: Latent Space Regularization and Alignment for Human Reaction Motion Generation with Intermediate Motion Semantics</h1>
+        </header>
+
+
+
+        <section class="authors">
+            <div class="author">
+                <a href="https://scholar.google.com.pk/citations?user=nmVlfioAAAAJ&hl=en"><h3>Ali Asghar Manjotho<sup>1,2</sup><span>,</span></h3></a>
+                <a href="https://www.researchgate.net/scientific-contributions/Tekie-Tsegay-Tewolde-2271209848"><h3>Tekie Tsegay Tewolde<sup>1</sup><span>,</span></h3></a>
+                <a href="https://scholar.google.com/citations?user=t3J1irkAAAAJ&hl=en"><h3>Ramadhani Ally Duma<sup>1,3</sup><span>,</span></h3></a>
+                <a href="https://www.researchgate.net/profile/Zhendong-Niu-2"><h3>Zhendong Niu<sup>1</sup></h3></a>
+            </div>
+            
+            <div class="affiliations">
+                <p><sup>1</sup>Beijing Institute of Technology, China, <sup>2</sup>Mehran University of Engineering and Technology, Pakistan,</p>
+                <p><sup>3</sup>The University of Dodoma, Tanzania.</p>
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- Add new section for buttons -->
+        <section class="project-links">
+            <a href="#" class="link-button paper disabled">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                </svg>
+                Paper
+            </a>
+            <a href="#" class="link-button arxiv disabled">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M9.5 11.5C9.5 12.3 8.8 13 8 13H7V15H5.5V9H8C8.8 9 9.5 9.7 9.5 10.5V11.5M14.5 13.5C14.5 14.3 13.8 15 13 15H10.5V9H13C13.8 9 14.5 9.7 14.5 10.5V13.5M18.5 10.5H17V11.5H18.5V13H17V15H15.5V9H18.5V10.5M7 10.5H8V11.5H7V10.5M12 13.5H13V10.5H12V13.5Z"/>
+                </svg>
+                arXiv
+            </a>
+            <a href="#" class="link-button video-link">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M10,16.5V7.5L16,12M20,4.4C19.4,4.2 15.7,4 12,4C8.3,4 4.6,4.19 4,4.38C2.44,4.9 2,8.4 2,12C2,15.59 2.44,19.1 4,19.61C4.6,19.81 8.3,20 12,20C15.7,20 19.4,19.81 20,19.61C21.56,19.1 22,15.59 22,12C22,8.4 21.56,4.91 20,4.4Z"/>
+                </svg>
+                Video
+            </a>
+            <a href="https://github.com/AliManjotho/reactgen" class="link-button code">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+                </svg>
+                Code
+            </a>
+        </section>
+
+    </div>
+
+
+    <section class="section-compare-video">
+        <div class="compare-video" >
+            <div class="video-container border">
+                <video class="video-after" autoplay loop muted playsinline>
+                    <source src="./videos-paper/split-slider-0.mp4" type="video/mp4">
+                </video>
+            <div class="video-before">
+                <video autoplay loop muted playsinline>
+                    <source src="./videos-paper/split-slider-2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slider">
+                <div class="slider-handle"><span></span></div>
+            </div>
+        </div>
+
+        <h2>Two people stand side by side, one person grabs the other person's <span class="blue-bold">left hand</span> with his/her <span class="blue-bold">right hand</span>, and they spin in a <span class="blue-bold">circle</span>.</h2>
+
+
+    </section>
+
+
+
+
+    <div class="full-width-container ">
+        <div class="container">
+
+            <section class="abstract">
+                <h2>Abstract</h2>
+                <p>
+                    Modeling virtual characters that can react to the actions of another character or human can benefit automated computer animation, human-robot interaction, and social behavior generation in digital environments \cite{gan-reaction-motion}. Despite significant progress in motion generation, as discussed in Chapter 2, most existing works focus on generating motion for a single character \cite{t2m-gpt, motiongpt-2}, while the generation of reaction motion, particularly in the context of human interactions conditioned solely on action sequences, remains largely understudied. Moreover, for optimal action-reaction motion mapping, the learned latent space must be (1) highly disentangled, meaning similar motions should be closer and dissimilar motions should be apart in the latent space and (2) action and reaction motion spaces must be closely aligned, that is, two variables having the same value sampled from action and reaction distributions must correspond to the correctly mapped action-reaction motion pair.
+
+                    Moreover, effective motion representation is crucial for models to comprehend the underlying motion structures and offer semantic guidance. It is essential to note that there exists a trade-off between the representation level and motion semantics. Higher-level representations, such as motion class labels or textual descriptions, lack fine-grained motion information. Conversely, lower-level representations, such as joint locations or orientations, encounter precision problems and introduce complexity during the training phase. Therefore, an intermediate representation provides more effective motion semantics. Various schemes have been proposed to effectively represent motion, including pose tokens \cite{pose-bits, pose-script}, motion descriptors \cite{sdqio}, global/local motion cues \cite{gmr, global-local, global-local-globalnet}, and kinematic phrases \cite{kinematic-phrases}. Although these schemes excel in motion recognition and classification tasks, they often struggle to generalize well to motion generation tasks.
+
+                    We propose ReActGen, a novel reaction motion generation model based on a dual-encoder CVAE, designed to produce semantically aligned human reactions. It comprises two encoders to learn the action and reaction motion spaces independently, with a shared decoder generating the reaction-motion sequence. Our objectives are twofold: (1) to enhance action-reaction mapping by effectively regularizing and aligning the two motion spaces. For this, we enforce the two encoders to learn similar probability distributions while disentangling the latent spaces with an enhanced conditional signal. (2) to provide a better motion representation and capture the nuances of the underlying motion structures. To address this issue, we propose novel quantized motion tokens and atomic action vectors as rich intermediate motion representations.
+
+                    The ReActGen uses an action-motion sequence $ x_a^{1:U}$ and extracts quantized motion tokens and atomic action vectors to generate the conditional signal. The two encoders and a decoder use this conditional signal as a bias to disentangle and regularize the motion spaces. This results in an improved the action-reaction mapping. The reaction-motion encoder encodes the reaction-motion sequence $ x_r^{1:V}$. The decoder then reconstructs the corresponding reaction-motion by learning a mapping function. Moreover, the guided alignment at two encoders ensures that the two distributions are similar. This allows the decoder to sample a variable from the reaction space during training and from the action space during inference.
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+
+    
+
+        
+    <div class="container evaluation">
+
+
+
+
+        <section class="method">
+            <h2>Proposed Method</h2>
+            <h4 class="red">(Hover the mouse over image to Zoom)</h4> <br/>
+    
+            <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(./images-paper/fig-model.jpg)">
+                <img src="./images-paper/fig-model.jpg"/>
+            </figure>
+            <p>
+                Overview of proposed ReActGen model. (left) DE-CVAE network with two encoders and a decoder. QMTs and atomic action vectors are extracted from action-motion using QMTE and AAE modules, respectively (right) QMTE module, AAE module, and atomic action codebook.
+            </p> 
+
+        </section>
+
+        <br/><br/>
+        
+
+        <section class="kf">
+            <h2>Quantized Motion Tokens (QMTs)</h2>
+            <img src="./images-paper/fig-qmt.jpg" width="100%"/>
+    
+            <p>
+                Visualization of quantized motion tokens (top left) Motion sequence (top middle) orientational and positional quantizations (top right) extracted quantized motion tokens (bottom) visual representations for QPT, QPRPT, QPDT, QLAT, QLOT, and QJVT.
+            </p>  
+
+        </section>
+
+        <br/><br/><br/><br/>
+
+
+        <!-- <section class="image-caption">
+            <p>FQK-T2M generates semantically accurate and contextually aligned human motions.</p>
+        </section> -->
+
+
+        <!-- Add this after your existing sections -->
+        <section class="video-grid">
+            <h3>Qualitative Results on InterX Dataset (Rendering Engine = Open 3D Engine-O3DE)</h3>
+
+            <div class="grid-container">
+                <!-- Grid Item 1 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/11.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> The first person extends his/her right hand over his/her head and waves at the second person, who then extends his/her right hand next to his/her head and waves back at the first person.  
+                    </h6>
+                </div>
+
+                <!-- Grid Item 2 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/505.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> Two people stand side by side, with one person holding the other person's left upper arm using his/her right hand, as they move forward together.  
+                    </h6>
+                </div>
+
+                <!-- Grid Item 3 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/42.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> The first person gently pushes the second person on his/her right shoulder from behind with his/her right hand, causing the second person to be pushed down to the ground.
+                    </h6>
+                </div>
+
+
+
+
+
+                <!-- Grid Item 4 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/55.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> The first person softly pats the upper right part of the second person's back from behind using his/her right hand.  
+                    </h6>
+                </div>
+
+                <!-- Grid Item 5 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/71.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> Two people stand facing each other. The first person takes a few steps towards the second person and then knocks him/her over with his/her left shoulder.
+                    </h6>
+                </div>
+
+                <!-- Grid Item 6 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/133.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> The first person sits down. The second person stands behind him and puts both hands on his shoulders, massaging them gently at first and then vigorously.
+                    </h6>
+                </div>
+
+
+
+
+
+
+                <!-- Grid Item 7 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/173.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> One person sits on the ground while the other person approaches from the left, grabs the first person's left arm with both hands, and assists him/her in standing up.
+                    </h6>
+                </div>
+
+                <!-- Grid Item 8 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/499.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> Two people stand facing each other, dancing by raising their right hands high and waving them from side to side in the air. The first person lowers his/her hand, and the second person follows suit.
+                    </h6>
+                </div>
+
+                <!-- Grid Item 9 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/1149.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> Both stand side by side, with their hands on their waists, jumping and alternating kicking their feet forward.
+                    </h6>
+                </div>
+
+
+
+                <!-- Grid Item 10 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/1084.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> One person stands, raises his/her right hand, and waves to the other person who sits opposite him/her. The person sitting raises both hands to wave back.
+                    </h6>
+                </div>
+
+                <!-- Grid Item 11 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/6496.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> Two people stand. One person holds out his/her left hand, while the other person holds out his/her right hand. They take turns guessing and then switch hands.
+                    </h6>
+                </div>
+
+                <!-- Grid Item 12 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/8497.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> One person stands while the other walks forward and covers his/her mouth with one hand, then the person raises his/her hand and pushes the other person's hand away.
+                    </h6>
+                </div>
+
+                
+
+                
+            </div>
+        </section>
+
+        <br/><br/><br/><br/><br/><br/>
+
+
+
+
+
+
+
+        <section class="video-grid">
+            <h3>Qualitative Results on InterHuman Dataset (Rendering Engine = Blender-Cycles)</h3>
+
+            <div class="grid-container">
+                <!-- Grid Item 1 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/betas-1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> In an intense boxing match, one is continuously punching while the other is defending and counterattacking.  
+                    </h6>
+                </div>
+
+                <!-- Grid Item 2 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">Contact and Motion Consistency (CMC) Module. (Left) Mesh contact matrix encodes contact regions between interacting bodies. (Middle) A bipartite graph captures inter- and intra-skeletal relations. (Right) Features injected into the self-attention mechanism to enhance spatial and temporal coherence.
+                            <source src="./videos-paper/betas-6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> Two humans stands straight and raise one arm while repeatedly exchanging greetings with each other. 
+                    </h6>
+                </div>
+
+                <!-- Grid Item 3 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/betas-3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h6 class="video-caption">
+                        <span class="blue-bold">Prompt: </span> One person physically interacts with the other person by hitting and pushing, causing the other person to step backwards.
+                    </h6>
+                </div>
+               
+
+                
+            </div>
+        </section>
+
+        <br/><br/><br/><br/><br/><br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3>Results for various Shape Parameters &beta;<sub>a</sub> and &beta;<sub>b</sub></h3>
+        <!-- Add this after your existing sections -->
+        <section class="video-grid">
+            <div class="grid-container">
+            <!-- Grid Item 1 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/1/1 short-fat short-thin.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                </div>
+
+                <!-- Grid Item 2 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/1/1 short-normal normal.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                </div>
+
+                <!-- Grid Item 3 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/1/1 tall-normal short-fat.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                </div>
+                
+            </div>
+        </section>
+
+        <br />
+
+        <h6 class="video-caption">
+            <span class="blue-bold">Prompt: </span> One person opens his/her arms, leans forward at the waist, hugs the other person, and lightly pats him/her twice with his/her right hand. Then, the other person embraces his/her waist.
+        </h6>
+
+        <br /><br /><br />
+
+
+
+
+
+        <section class="video-grid">
+            <div class="grid-container">
+
+                <!-- Grid Item 4 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/47/47 short-fat short-thin.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Grid Item 5 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/47/47 short-normal normal.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Grid Item 6 -->
+                <div class="grid-item">
+                    <div class="video-box">
+                        <video autoplay loop muted playsinline width="365" height="252">
+                            <source src="./videos-paper/47/47 tall-normal short-fat.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>             
+  
+            </div>
+        </section>
+
+        <br />
+
+        <h6 class="video-caption">
+            <span class="blue-bold">Prompt: </span> The first person pulls the second person's forearms forward with both hands while stepping back themselves, causing the second person to be pulled forward several steps while turning right.
+        </h6>
+
+        <br/><br/><br/><br/>
+
+
+
+        
+    </div>
+
+
+        <div class="full-width-container ">
+            <div class="container">
+    
+                <!-- Add this after your existing sections -->
+                <section class="two-column-grid">
+                    <div class="two-column-grid-container">
+
+                        <div class="grid-item">
+                            <div class="column-box">
+                                <h2>Normal Alignment-Based Mesh Contacts</h2>
+                                <p> Mesh contact computed as normal alignment and centroid distance between face pairs, forming a contact matrix C<sup>i</sup>. </p>
+                                <br /><br /><br />
+                                <img src="./images-paper/fig-contacts.png" width="90%"/>
+                            </div>
+                        </div>
+
+                        <div class="grid-item">
+
+                            <div class="column-box">
+                                <h2>Orientation Vectors and Interaction Features</h2>
+                                <p> Interaction features include orientation vectors (head, chest, mid-hip), proximity, and trajectories of the interacting meshes M<sub>a</sub> and M<sub>b</sub>.</p>
+                                <img src="./images-paper/fig-orientation-vectors.png" width="85%"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+            
+            </div>
+        </div>
+
+   
+
+    <div class="container">
+    
+
+    
+
+
+
+
+
+
+
+    <!-- Evaluation and comparison with SOTA. -->
+        <section class="evaluation">
+            <br/><br/>
+            <h2>Evaluation and Comparison with SOTA</h2>
+            <br/>
+
+
+
+            <!-- SOTA Comparison Prompt-1 -->
+            <h3>Qualitative Evaluations against SOTA</h3>
+            <h4>Qualitative comparison of ReActGen on InterHuman dataset with ReGenNet and ReMoS for sequence 1. For input action motion, the corresponding generated reaction and combined motion is shown. Character <i>a</i> (in <span style="color: blue">blue</span>) is the actor and <i>r</i> (in <span style="color: red">red</span>) is the reactor.</h4>
+            <img src="./images-paper/fig-additional-qualitative-1.png" width="70%"/> 
+            <br/>  <br/>  <br/>  
+            <h4>Qualitative comparison of ReActGen on InterHuman dataset with ReGenNet and ReMoS for sequence 2.</h4>
+            <img src="./images-paper/fig-additional-qualitative-1.png" width="70%"/>  
+        
+            <!--/ SOTA Comparison Prompt-1 -->
+    
+            
+            
+            
+
+    
+        
+            <br/><br/><br/><br/>
+            <!-- Qunat. HumanML3D. -->
+            <h3>Quantitative Evaluation on InterHuman Dataset</h3>
+            <h4>Quantitative comparison of ReActGen with state-of-the-art approaches on the InterHuman test set. Values are reported with 95\% confidence intervals (&plusmn;). Arrows indicate evaluation preference: (&#8593;) for higher-is-better, (&#8595;) for lower-is-better, and (&#8594;) for values closest to ground truth. <b>Bold</b> indicates the best performance, while <u>underlining</u> denotes the second-best.</h4>
+            <img src="./images-paper/fig-quant-eval-interhuman.png" width="70%"/>          
+            <!--/ Qunat. HumanML3D. -->
+    
+            <br/><br/><br/><br/>
+            <!-- Qunat. KITML. -->
+            <h3>Quantitative Evaluation on InterX Dataset</h3>
+            <h4>Quantitative comparison of ReActGen with state-of-the-art approaches on the InterX test set.</h4>
+            <img src="./images-paper/fig-quant-eval-interx.png" width="70%"/>
+            <!--/ Qunat. KITML. -->
+    
+    
+    
+    
+            <br/><br/><br/><br/>
+            <!--  Ablation Studies. -->
+            <h3>Ablation Studies</h3>
+            <h4>Component-wise ablation study evaluating the impact of removing key components from the ReActGen model. Results are reported for FID , MPJPE, MPJVE, and M-Cons.</h4>
+            <img src="./images-paper/fig-ablation-1.png" width="50%"/>
+
+            <h4>Ablation study investigating the effects of varying latent vector dimensions qpi , qri , and the number of attention heads A on ReActGen performance. Optimal results are obtained with qpi = qr i = 512 and A = 128, balancing fidelity, joint accuracy, temporal smoothness, and interaction consistency.</h4>
+            <img src="./images-paper/fig-ablation-2.png" width="50%"/>
+
+          <!--/ Ablation Studies. -->
+  
+    </section>
+    <!--/ Evaluation and comparison with SOTA. -->
+  
+  
+
+    
+</div>
+
+
+
+
+
+
+
+<div class="full-width-container ">
+    <div class="container">
+        <section class="footer">
+            <p>This project is supported my Beijing Institute of Technology, China and Mehran University of Engineering and Technology, Pakistan.</p>
+        </section>
+    </div>
+</div>
+
+
+
+
+<script src="script.js"></script>
+
+<script>
+    // Initialize both viewers
+    const viewer1 = new ImageSequenceViewer(
+    document.getElementById('sequence-viewer-1'), 
+    {
+        folderPath: './interpolation/back_kick/',
+        numFrames: 72,
+        startFrame: 1,
+        endFrame: 72,
+        speed: 1.0,
+        autoplay: true
+    }
+    );
+
+    const viewer2 = new ImageSequenceViewer(
+    document.getElementById('sequence-viewer-2'), 
+    {
+        folderPath: './interpolation/boxing/',
+        numFrames: 512,
+        startFrame: 1,
+        endFrame: 512,
+        speed: 1.0,
+        autoplay: true
+    }
+    );
+</script>
+
+
+</body>
+</html>

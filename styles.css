@@ -1,0 +1,598 @@
+/* Remove the previous Google Sans import */
+/* Update the font-family in the body */
+body {
+    font-family: 'Google Sans', sans-serif;
+    line-height: 1.0;
+    color: #363636;
+    background-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.full-width-container {
+    background-color: rgb(245, 245, 245);
+    margin: 0 auto;
+    padding: 1rem;
+
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-title {
+    font-size: 30pt;
+    color: #363636;
+    margin-bottom: 1rem;
+    line-height: 1.125;
+}
+
+.authors {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.author h3 {
+    display: inline-block;
+    margin: 0.5rem;
+    color: #3273dc;
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+
+.author sup, .author span {
+    color: #363636;
+}
+
+.affiliations {
+    font-size: 20px;
+    margin-top: 1rem;
+    color: rgb(74, 74, 74);
+    line-height: 1.30;
+    text-align: center;
+}
+
+.abstract {
+    text-align: justify;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: normal;
+}
+
+.abstract h2 {
+    font-size: 32px;
+    margin-bottom: 1rem;
+}
+
+.abstract p{
+    font-size: 16px;
+}
+
+.project-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Add these styles for the project links section */
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.link-button:hover {
+    background-color: #444444;
+}
+
+.link-button.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.link-button .icon {
+    fill: currentColor;
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 2rem;
+    }
+
+    .author h3 {
+        display: block;
+        margin: 0.3rem 0;
+    }
+
+    .project-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .link-button {
+        justify-content: center;
+    }
+}
+
+.image-caption {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Google Sans', sans-serif;
+    color: #363636;
+    font-size: 20px;
+} 
+
+
+.section-compare-video {
+    margin: 30px 0;
+}
+
+.section-compare-video h2 {
+    margin: 10px auto;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.red{
+    color: red !important;
+  }
+  .red-bold {
+    color: red !important;
+    font-weight: bold !important;
+  }
+  
+  .blue{
+    color: #0072ADFF !important;
+  }
+  
+  .blue-bold {
+    color: #0072ADFF;
+    font-weight: bold !important;
+  }
+  
+  .gray-border{
+    border: 2px solid gray;
+  }
+  .rounded-border {
+    border-radius: 25px;  
+    padding: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  
+  .video{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    padding: 0;
+    font-size: 0;
+    display: inline-block;
+  }
+  
+  
+  
+  
+  figure.zoom {
+    & img:hover {
+      opacity: 0;
+    }
+    img {
+      transition: opacity .5s;
+      display: block;
+      width: 100%;
+    }
+    background-position: 50% 50%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+  
+  
+  
+  .border{
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  
+  .compare-video {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .compare-video .video-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .compare-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+  }
+  
+  .compare-video .video-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  }
+  
+  .compare-video .video-before::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+  }
+  
+  .compare-video .slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: white;
+    cursor: ew-resize;
+    transform: translateX(-50%);
+  }
+  
+  .compare-video .slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    transform: translate(-50%, -50%);
+    cursor: ew-resize;
+  }
+  
+  .compare-video .slider-handle::before,
+  .compare-video .slider-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 2px;
+    background: #333;
+  }
+  
+  .compare-video .slider-handle::before {
+    left: 8px;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  .compare-video .slider-handle::after {
+    left: 8px;
+    transform: translateY(-50%) rotate(45deg);
+    top: calc(50% + 6px);
+  }
+  
+  .compare-video .slider-handle > span::before,
+  .compare-video .slider-handle > span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 2px;
+    background: #333;
+    right: 8px;
+  }
+  
+  .compare-video .slider-handle > span::before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .compare-video .slider-handle > span::after {
+    transform: translateY(-50%) rotate(-45deg);
+    top: calc(50% + 6px);
+  }
+  
+  .compare-video .video-after {
+    position: relative !important;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  
+  
+  table.qualitative-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  
+  table.qualitative-table > td {
+    text-align: center;
+    vertical-align: middle;
+    
+  }
+  
+  table.qualitative-table > tr:first-child td {
+    /* background-color: #f8f9fa; */
+    font-weight: bold;
+  }
+  
+
+  table.qualitative-table > td:first-child {
+    /* background-color: #f8f9fa; */
+    font-weight: bold;
+  }
+
+
+td{
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Video Grid Styles */
+.video-grid {
+    width: 100%;  /* Make sure it takes full width of container */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 365px);
+    gap: 2.2rem;  /* Slightly reduced gap to fit better in container */
+    width: 100%;  /* Take full width of parent */
+
+
+    
+}
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 1;  /* Make boxes square */
+    
+    
+}
+
+.video-box video {
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgb(187, 187, 187);
+}
+
+.video-caption {
+    margin-top: 1rem;
+    text-align: center;
+    color: #363636;
+    font-size: 18px;
+    font-family: 'Google Sans', sans-serif;
+    line-height: 1.4;
+    margin-top: -110px;
+}
+
+/* Adjust responsive breakpoints to match container size */
+@media (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+.method, .kf .evaluation {
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: normal;
+}
+
+.method h2, .kf h2, .evaluation h2 {
+    font-size: 28px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+
+.evaluation h3{
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: #3273dc;
+    text-align: center;
+}
+
+.method h4, .kf h4, .evaluation h4{
+    font-size: 20px;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.evaluation h6{
+    font-size: 17px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.evaluation {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* Video Grid Styles */
+.two-column-grid {
+    width: 100%;  /* Make sure it takes full width of container */
+}
+
+.two-column-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 550px);
+    gap: 3.5rem;  /* Slightly reduced gap to fit better in container */
+    width: 100%;  /* Take full width of parent */
+}
+
+.column-box {
+    width: 100%;
+    aspect-ratio: 1;  /* Make boxes square */
+
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgb(187, 187, 187);
+    margin: auto auto;
+    text-align: center;
+    padding: 20px;
+    
+    
+}
+
+.column-box h2 {
+    margin-bottom: 10px;
+    line-height: normal;
+}
+
+.column-box p {
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.column-box img {
+    margin-bottom: 10px;
+}
+
+
+
+/* Adjust responsive breakpoints to match container size */
+@media (max-width: 1000px) {
+    .two-column-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .two-column-grid-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .two-column-grid-container{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

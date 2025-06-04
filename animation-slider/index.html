@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Sequence Viewers</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="scripts/index.js"></script>
+</head>
+<body>
+
+        <div class="viewer-wrapper">
+            <div id="sequence-viewer-1"></div>
+        </div>
+        <div class="viewer-wrapper">
+            <div id="sequence-viewer-2"></div>
+        </div>
+
+
+    <script>
+        // Initialize both viewers
+        const viewer1 = new ImageSequenceViewer(
+            document.getElementById('sequence-viewer-1'), 
+            {
+                folderPath: 'D:/RESEARCH/Code/fqk-t2m-website/static/interpolation/back_kick/',
+                numFrames: 72,
+                startFrame: 1,
+                endFrame: 72,
+                speed: 1.0,
+                autoplay: true
+            }
+        );
+
+        const viewer2 = new ImageSequenceViewer(
+            document.getElementById('sequence-viewer-2'), 
+            {
+                folderPath: 'D:/RESEARCH/Code/fqk-t2m-website/static/interpolation/back_kick-4/',
+                numFrames: 72,
+                startFrame: 1,
+                endFrame: 72,
+                speed: 1.0,
+                autoplay: true
+            }
+        );
+    </script>
+</body>
+</html>
