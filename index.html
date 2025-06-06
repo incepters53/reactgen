@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReActGen</title>
+    <title>LS-ReMGM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -18,7 +18,7 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="project-title">ReActGen: Latent Space Regularization and Alignment for Human Reaction Motion Generation with Intermediate Motion Semantics</h1>
+            <h1 class="project-title">LS-ReMGM: Latent-aligned Semantic-guided Reaction Motion Generation Model</h1>
         </header>
 
 
@@ -122,9 +122,9 @@
 
                     Moreover, effective motion representation is crucial for models to comprehend the underlying motion structures and offer semantic guidance. It is essential to note that there exists a trade-off between the representation level and motion semantics. Higher-level representations, such as motion class labels or textual descriptions, lack fine-grained motion information. Conversely, lower-level representations, such as joint locations or orientations, encounter precision problems and introduce complexity during the training phase. Therefore, an intermediate representation provides more effective motion semantics. Various schemes have been proposed to effectively represent motion, including pose tokens \cite{pose-bits, pose-script}, motion descriptors \cite{sdqio}, global/local motion cues \cite{gmr, global-local, global-local-globalnet}, and kinematic phrases \cite{kinematic-phrases}. Although these schemes excel in motion recognition and classification tasks, they often struggle to generalize well to motion generation tasks.
 
-                    We propose ReActGen, a novel reaction motion generation model based on a dual-encoder CVAE, designed to produce semantically aligned human reactions. It comprises two encoders to learn the action and reaction motion spaces independently, with a shared decoder generating the reaction-motion sequence. Our objectives are twofold: (1) to enhance action-reaction mapping by effectively regularizing and aligning the two motion spaces. For this, we enforce the two encoders to learn similar probability distributions while disentangling the latent spaces with an enhanced conditional signal. (2) to provide a better motion representation and capture the nuances of the underlying motion structures. To address this issue, we propose novel quantized motion tokens and atomic action vectors as rich intermediate motion representations.
+                    We propose LS-ReMGM, a novel reaction motion generation model based on a dual-encoder CVAE, designed to produce semantically aligned human reactions. It comprises two encoders to learn the action and reaction motion spaces independently, with a shared decoder generating the reaction-motion sequence. Our objectives are twofold: (1) to enhance action-reaction mapping by effectively regularizing and aligning the two motion spaces. For this, we enforce the two encoders to learn similar probability distributions while disentangling the latent spaces with an enhanced conditional signal. (2) to provide a better motion representation and capture the nuances of the underlying motion structures. To address this issue, we propose novel quantized motion tokens and atomic action vectors as rich intermediate motion representations.
 
-                    The ReActGen uses an action-motion sequence $ x_a^{1:U}$ and extracts quantized motion tokens and atomic action vectors to generate the conditional signal. The two encoders and a decoder use this conditional signal as a bias to disentangle and regularize the motion spaces. This results in an improved the action-reaction mapping. The reaction-motion encoder encodes the reaction-motion sequence $ x_r^{1:V}$. The decoder then reconstructs the corresponding reaction-motion by learning a mapping function. Moreover, the guided alignment at two encoders ensures that the two distributions are similar. This allows the decoder to sample a variable from the reaction space during training and from the action space during inference.
+                    The LS-ReMGM uses an action-motion sequence $ x_a^{1:U}$ and extracts quantized motion tokens and atomic action vectors to generate the conditional signal. The two encoders and a decoder use this conditional signal as a bias to disentangle and regularize the motion spaces. This results in an improved the action-reaction mapping. The reaction-motion encoder encodes the reaction-motion sequence $ x_r^{1:V}$. The decoder then reconstructs the corresponding reaction-motion by learning a mapping function. Moreover, the guided alignment at two encoders ensures that the two distributions are similar. This allows the decoder to sample a variable from the reaction space during training and from the action space during inference.
                 </p>
             </section>
 
@@ -148,7 +148,7 @@
                 <img src="./images-paper/fig-model.jpg"/>
             </figure>
             <p>
-                Overview of proposed ReActGen model. (left) DE-CVAE network with two encoders and a decoder. QMTs and atomic action vectors are extracted from action-motion using QMTE and AAE modules, respectively (right) QMTE module, AAE module, and atomic action codebook.
+                Overview of proposed LS-ReMGM model. (left) DE-CVAE network with two encoders and a decoder. QMTs and atomic action vectors are extracted from action-motion using QMTE and AAE modules, respectively (right) QMTE module, AAE module, and atomic action codebook.
             </p> 
 
         </section>
@@ -566,31 +566,31 @@
 
             <!-- SOTA Comparison Prompt-1 -->
             <h3>Qualitative Evaluations against SOTA</h3>
-            <h4>Qualitative comparison of ReActGen on InterHuman dataset with ReGenNet and ReMoS for sequence 1. For input action motion, the corresponding generated reaction and combined motion is shown. Character <i>a</i> (in <span style="color: blue">blue</span>) is the actor and <i>r</i> (in <span style="color: red">red</span>) is the reactor.</h4>
+            <h4>Qualitative comparison of LS-ReMGM on InterHuman dataset with ReGenNet and ReMoS for sequence 1. For input action motion, the corresponding generated reaction and combined motion is shown. Character <i>a</i> (in <span style="color: blue">blue</span>) is the actor and <i>r</i> (in <span style="color: red">red</span>) is the reactor.</h4>
             <img src="./images-paper/fig-additional-qualitative-1.png" width="70%"/> 
             <br/>  <br/>  <br/>  
-            <h4>Qualitative comparison of ReActGen on InterHuman dataset with ReGenNet and ReMoS for sequence 2.</h4>
+            <h4>Qualitative comparison of LS-ReMGM on InterHuman dataset with ReGenNet and ReMoS for sequence 2.</h4>
             <img src="./images-paper/fig-additional-qualitative-1.png" width="70%"/>  
         
             <!--/ SOTA Comparison Prompt-1 -->
     
             
             
-            
+        
 
     
         
             <br/><br/><br/><br/>
             <!-- Qunat. HumanML3D. -->
             <h3>Quantitative Evaluation on InterHuman Dataset</h3>
-            <h4>Quantitative comparison of ReActGen with state-of-the-art approaches on the InterHuman test set. Values are reported with 95\% confidence intervals (&plusmn;). Arrows indicate evaluation preference: (&#8593;) for higher-is-better, (&#8595;) for lower-is-better, and (&#8594;) for values closest to ground truth. <b>Bold</b> indicates the best performance, while <u>underlining</u> denotes the second-best.</h4>
+            <h4>Quantitative comparison of LS-ReMGM with state-of-the-art approaches on the InterHuman test set. Values are reported with 95\% confidence intervals (&plusmn;). Arrows indicate evaluation preference: (&#8593;) for higher-is-better, (&#8595;) for lower-is-better, and (&#8594;) for values closest to ground truth. <b>Bold</b> indicates the best performance, while <u>underlining</u> denotes the second-best.</h4>
             <img src="./images-paper/fig-quant-eval-interhuman.png" width="70%"/>          
             <!--/ Qunat. HumanML3D. -->
     
             <br/><br/><br/><br/>
             <!-- Qunat. KITML. -->
             <h3>Quantitative Evaluation on InterX Dataset</h3>
-            <h4>Quantitative comparison of ReActGen with state-of-the-art approaches on the InterX test set.</h4>
+            <h4>Quantitative comparison of LS-ReMGM with state-of-the-art approaches on the InterX test set.</h4>
             <img src="./images-paper/fig-quant-eval-interx.png" width="70%"/>
             <!--/ Qunat. KITML. -->
     
@@ -600,10 +600,10 @@
             <br/><br/><br/><br/>
             <!--  Ablation Studies. -->
             <h3>Ablation Studies</h3>
-            <h4>Component-wise ablation study evaluating the impact of removing key components from the ReActGen model. Results are reported for FID , MPJPE, MPJVE, and M-Cons.</h4>
+            <h4>Component-wise ablation study evaluating the impact of removing key components from the LS-ReMGM model. Results are reported for FID , MPJPE, MPJVE, and M-Cons.</h4>
             <img src="./images-paper/fig-ablation-1.png" width="50%"/>
 
-            <h4>Ablation study investigating the effects of varying latent vector dimensions qpi , qri , and the number of attention heads A on ReActGen performance. Optimal results are obtained with qpi = qr i = 512 and A = 128, balancing fidelity, joint accuracy, temporal smoothness, and interaction consistency.</h4>
+            <h4>Ablation study investigating the effects of varying latent vector dimensions qpi , qri , and the number of attention heads A on LS-ReMGM performance. Optimal results are obtained with qpi = qr i = 512 and A = 128, balancing fidelity, joint accuracy, temporal smoothness, and interaction consistency.</h4>
             <img src="./images-paper/fig-ablation-2.png" width="50%"/>
 
           <!--/ Ablation Studies. -->
